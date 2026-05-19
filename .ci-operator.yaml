@@ -1,0 +1,19 @@
+build_root:
+  image_stream_tag:
+    name: release
+    namespace: openshift
+    tag: rhel-golang-1.12
+resources:
+  '*':
+    requests:
+      cpu: 100m
+      memory: 200Mi
+tests:
+- as: hello
+  commands: echo hello
+  container:
+    from: src
+zz_generated_metadata:
+  branch: master
+  org: Prucek
+  repo: ci-staging
