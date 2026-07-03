@@ -3,6 +3,11 @@ build_root:
     name: release
     namespace: openshift
     tag: rhel-golang-1.12
+releases:
+  latest:
+    release:
+      channel: stable
+      version: "4.15"
 resources:
   '*':
     requests:
@@ -10,9 +15,13 @@ resources:
       memory: 200Mi
 tests:
 - as: hello
-  commands: echo hello
+  commands: echo "hello from ci-staging!" && date && uname -a
   container:
     from: src
+- as: e2e-aws
+  steps:
+    cluster_profile: aws
+    workflow: ipi-aws
 zz_generated_metadata:
   branch: master
   org: Prucek
