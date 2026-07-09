@@ -13,6 +13,10 @@ tests:
   commands: echo hello
   container:
     from: src
+- as: plugin-test
+  commands: echo "testing in-repo-config plugin"
+  container:
+    from: src
 zz_generated_metadata:
   branch: master
   org: Prucek
