@@ -16,7 +16,7 @@ resources:
 tests:
 - as: hello
   cluster: build09
-  commands: echo "hello from ci-staging!" && date && uname -a
+  commands: echo "hello from ci-staging v2!" && date && uname -a
   container:
     from: src
 - as: e2e-aws
