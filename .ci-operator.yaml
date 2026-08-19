@@ -28,3 +28,8 @@ zz_generated_metadata:
   branch: master
   org: Prucek
   repo: ci-staging
+- as: simple-test
+  cluster: build09
+  commands: echo "simple test added for mount verification"
+  container:
+    from: src
